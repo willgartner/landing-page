@@ -2,12 +2,15 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* [Notes](#Notes)
 
-## Instructions
+## Notes
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Using available starter code.
 
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+- Added section to HTML
+- Added active class to styles.css file
+- Added sections and navbar as globals
+- Used getBoundingClientRect() to build scrolling event listener to detect when sections are in the viewer and apply active class
+- Built links for sections into navbar and added styling.
+- Used scrollIntoView to on built nav links to initiate scrolling action to appropriate section
