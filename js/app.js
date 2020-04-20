@@ -17,41 +17,34 @@
  * Define Global Variables
  * 
 */
-
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-// build the nav
-
+const navbar = document.getElementById('navbar__list');
+const sections = document.getElementsByTagName('section');
 
 // Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
+document.addEventListener("scroll", function () {
+    for (const section of sections){
+        const sectRect = section.getBoundingClientRect()
+        if(sectRect.top <= 188 && sectRect.bottom >= 188){
+            section.classList.add('active')
+        }
+        else{
+            section.classList.remove('active')
+        }
+    }
+});
 
 // Build menu 
+for (const section of sections) {
+    const newNav = document.createElement('li');
+    const newLink = document.createElement('a');
 
-// Scroll to section on link click
+    newLink.textContent = section.getAttribute('data-nav');
+    newLink.classList.add('menu__link')
+    newLink.addEventListener('click', function (){
+        document.getElementById(section.getAttribute('id')).scrollIntoView({behavior:'smooth'});
+    });
 
-// Set sections as active
+    newNav.appendChild(newLink);
+    navbar.appendChild(newNav);
 
-
+}
